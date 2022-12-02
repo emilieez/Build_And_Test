@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>CircleCI Build and Test</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <style>
+      .jumbotron {
+        background: #00373f;
+        color: white;
+      }
+
+      .jumbotron p {
+        max-width: 75%;
+        margin: 1em auto 2em;
+      }
+
+      #pun-container {
+        margin-top: 32px;
+      }
+
+      #pun-container p {
+        font-size: 24px;
+        margin: 32px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Build and Test</h1>
+      </div>
+    </div>
+    <main>
+      <div class="container text-center">
+        <div class="row">
+          <button class="btn btn-lg btn-info" id="main-button">What is the best CI/CD Tool?</button>
+        </div>
+        <div class="row">
+          <div id="newText-container">
+            <h1 id="newText"></h1>
+          </div>
+        <button class="btn btn-dark btn-secondary" id="clear-button" style="display: none">OK</button>
+        </div>
+      </div>
+    </main>
+    <script>
+      (function() {
+        let newText = "CircleCI!"
+
+        function showNewText() {
+            document.getElementById('newText').innerHTML = newText;
+            document.getElementById("clear-button").removeAttribute("style")
+        }
+
+        function clearText() {
+            document.getElementById("newText").innerHTML = "";
+            document.getElementById("clear-button").setAttribute("style", "display: none")
+        }
+
+        document.getElementById("main-button").addEventListener("click", showNewText)
+        document.getElementById("clear-button").addEventListener("click", clearText)
+      })();
+    </script>
+  </body>
+</html>
