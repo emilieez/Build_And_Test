@@ -1,14 +1,11 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
 orbs:
   node: circleci/node@5.0.3
   heroku: circleci/heroku@2.0.0
 
 jobs:
-  build_and_test: # this can be any name you choose
+  build_and_test: 
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
@@ -21,7 +18,7 @@ jobs:
           root: ~/project
           paths:
             - .
-  deploy: # this can be any name you choose
+  deploy: 
     executor: heroku/default
     steps:
       - attach_workspace:
