@@ -15,7 +15,7 @@ describe('index.html', () => {
     container = dom.window.document.body
   })
 
-  it('Shows new text when button is cliced', async () => {
+  it('Shows new text when button is clicked', async () => {
     const button = getByText(container, 'What is the best CI/CD Tool?')
     
     fireEvent.click(button)
